@@ -1,7 +1,7 @@
 #! python3
 # __author__ = "YangJiaHao"
 # date: 2017/10/21
-from single_chain_table import SingleChainTable
+from chain_talbe.single_chain_table import SingleChainTable
 
 
 class Node(object):
