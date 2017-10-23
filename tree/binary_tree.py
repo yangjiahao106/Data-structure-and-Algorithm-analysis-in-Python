@@ -19,10 +19,10 @@ class BinaryTree(object):
         if self.root is None:
             self.root = node
         else:
-            queue = []
-            queue.append(self.root)
-            while queue:
-                cur = queue.pop(0)
+            queue_ = list()
+            queue_.append(self.root)
+            while queue_:
+                cur = queue_.pop(0)
                 if cur.l_child is None:
                     cur.l_child = node
                     return
@@ -30,8 +30,8 @@ class BinaryTree(object):
                     cur.r_child = node
                     return
                 else:
-                    queue.append(cur.l_child)
-                    queue.append(cur.r_child)
+                    queue_.append(cur.l_child)
+                    queue_.append(cur.r_child)
 
     def depth_travel(self, root_in):
         if root_in is None:
@@ -40,10 +40,11 @@ class BinaryTree(object):
         self.depth_travel(root_in.l_child)
         self.depth_travel(root_in.r_child)
 
-    def breadth_travel(self, root_in):
+    @staticmethod
+    def breadth_travel(root_in):
         if root_in is None:
             return
-        queue = []
+        queue = list()
         queue.append(root_in)
         while queue:
             cur = queue.pop(0)
