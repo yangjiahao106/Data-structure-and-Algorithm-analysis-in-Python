@@ -63,6 +63,8 @@ if __name__ == '__main__':
     tree.add(4)
     tree.add(5)
     tree.add(6)
+
     tree.breadth_travel(tree.root)
     print('-'*20)
+
     tree.depth_travel(tree.root)
