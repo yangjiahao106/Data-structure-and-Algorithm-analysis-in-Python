@@ -36,7 +36,7 @@ class BinaryTree(object):
     def depth_travel(self, root_in):
         if root_in is None:
             return
-        print(root_in.element)
+        print(root_in.element, end=', ')
         self.depth_travel(root_in.l_child)
         self.depth_travel(root_in.r_child)
 
@@ -48,7 +48,7 @@ class BinaryTree(object):
         queue.append(root_in)
         while queue:
             cur = queue.pop(0)
-            print(cur.element)
+            print(cur.element, end=', ')
             if cur.l_child is not None:
                 queue.append(cur.l_child)
             if cur.r_child is not None:
@@ -63,8 +63,7 @@ if __name__ == '__main__':
     tree.add(4)
     tree.add(5)
     tree.add(6)
-
+    print('breadth travel:')
     tree.breadth_travel(tree.root)
-    print('-'*20)
-
+    print('\ndepth travel:')
     tree.depth_travel(tree.root)
